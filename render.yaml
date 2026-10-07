@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: tiktok-flag-race
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /health
+    envVars:
+      - key: TIKTOK_USER
+        sync: false
